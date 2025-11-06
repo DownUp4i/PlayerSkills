@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class BonusInteractor : MonoBehaviour
 {
+    [SerializeField] private Inventory _inventory;
+
     public Bonus PickedBonusEffect;
 
     private void OnTriggerEnter(Collider other)
@@ -13,6 +15,8 @@ public class BonusInteractor : MonoBehaviour
             if (PickedBonusEffect == null)
             {
                 PickedBonusEffect = bonus;
+
+                PickedBonusEffect.PickUp();
             }
         }
     }

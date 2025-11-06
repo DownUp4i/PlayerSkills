@@ -5,12 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private Inventory _inventory;
-
-    private int _maxHealth = 100;
-    private int _currentHealth = 20;
-
-    public int CurrentHealth => _currentHealth;
-    public int MaxHealth => _maxHealth;
+    public Health Health = new Health();
 
     private KeyCode useBonusEffectKey = KeyCode.F;
     public bool HasUsedBonusEffect;
@@ -19,19 +14,11 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(useBonusEffectKey))
         {
-            if(_inventory._currentBonus != null)
+            if(_inventory.ÑurrentBonus != null)
             {
                 HasUsedBonusEffect = true;
-                _inventory._currentBonus.Use();
+                _inventory.ÑurrentBonus.Use();
             }
         }
-    }
-
-    public void ChangeHealth (int health)
-    {
-        if(health > _maxHealth)
-            _currentHealth = _maxHealth;
-
-        _currentHealth = health;
     }
 }

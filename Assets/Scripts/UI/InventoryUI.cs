@@ -8,7 +8,7 @@ public class InventoryUI : MonoBehaviour
 
     void Update()
     {
-        string _currentBonusEffectUI = _inventory._currentBonus != null ? _inventory._currentBonus.Name : "Ïóñòî";
+        string _currentBonusEffectUI = _inventory.ÑurrentBonus != null ? _inventory.ÑurrentBonus.Name : "Ïóñòî";
         _inventoryUI.text = $"Èíâåíòàğü: {_currentBonusEffectUI}";
     }
 }

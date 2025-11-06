@@ -8,7 +8,7 @@ public class HealthUI : MonoBehaviour
 
     private void Update()
     {
-        string _currentHealthUI = $"Çהמנמגüו: {_player.CurrentHealth} / {_player.MaxHealth}";
+        string _currentHealthUI = $"Çהמנמגüו: {_player.Health.CurrentHealth} / {_player.Health.MaxHealth}";
         _healthUI.text = _currentHealthUI;
     }
 }

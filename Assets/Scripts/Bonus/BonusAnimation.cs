@@ -11,8 +11,8 @@ public class BonusAnimation : MonoBehaviour
 
     private void Start()
     {
-        IsAnimated = true;
-        _defaultPosition = transform.position;
+        TurnOnAnimation();
+        _defaultPosition = transform.localPosition;
     }
 
     private void Update()
@@ -23,4 +23,8 @@ public class BonusAnimation : MonoBehaviour
             transform.position = _defaultPosition + Vector3.up * Mathf.Sin(Time.time) / 5;
         }
     }
+
+    public void TurnOnAnimation() => IsAnimated = true;
+    public void TurnOffAnimation() => IsAnimated = false;
+
 }
